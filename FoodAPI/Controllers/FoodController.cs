@@ -31,6 +31,7 @@ namespace FoodAPI.Controllers
                 fc.UserID = user;
                 fc.Barcode = barcode;
                 fc.DateTime = DateTime.Now.ToString();
+                fc.Date = DateTime.Now.Date.ToString();
                 fc.Calories = calories;
                 fc.Product = product;
                 fc.Percent = percent;
@@ -64,9 +65,7 @@ namespace FoodAPI.Controllers
                 var database = dbClient.GetDatabase("foodapi");
                 var collection = database.GetCollection<foodcount>("FoodCount");
                 var id = "1";
-                //var allToday = collection.Find(x => x.UserID == id && x.DateTime).ToList();
-
-
+                var allToday = collection.Find(x => x.UserID == id).ToList();
                 
             }
             catch (Exception ex)

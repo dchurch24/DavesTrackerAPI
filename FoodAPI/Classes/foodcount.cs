@@ -8,6 +8,7 @@ namespace FoodAPI.Classes
     public class foodcount
     {
         public string DateTime { get; set; }
+        public string Date { get; set; }
         public string UserID { get; set; }
         public string Barcode { get; set; }
         public string Product { get; set; }
